@@ -1,0 +1,14 @@
+Things to evaluate the system on:
+	•	Weather conditions
+	•	During partly cloudy weather, the system remains stable. We are able to get readings from the Bluetooth module and there are no disturbances in the water. 
+	•	pH sensor accuracy
+	•	Amount of voltage going through the system from the battery
+	•	Maximum distance to communicate with Bluetooth module
+	•	Illuminance values 
+	•	Waterproofness
+	•	The Tupperware container is set on a piece of Styrofoam connected to the PVC structure, making it so water from the river won’t disturb the electronics. 
+	•	The Tupperware container does include 2 small holes to run the pH sensor cable and the wiring from the solar panels, marking a vulnerability in the system in case it were to rain. 
+	•	The solar panels are attached with zip ties, so in the event of rain or snow, some disturbances could occur to the wiring, including corrosion. 
+	•	Amount of time the system is on and working
+	•	How it interacts with the environment (will any animals/creatures be disturbed by it or even disturb the system?)
+	•	The system stays afloat, and even when met with running water, will remain stable. 
