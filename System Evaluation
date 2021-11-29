@@ -1,0 +1,22 @@
+Things to evaluate the system on:
+- Weather conditions
+- pH sensor accuracy
+- Data storage on the Arduino
+- Amount of voltage going through the system from the battery
+- Maximum distance to communicate with Bluetooth module
+- Illuminance values 
+- Amount of time the system is on and working
+- - Will need to dedicate a day to testing
+- Environmental interactions
+- - Will any animals/creatures disturb the system?
+- - Does the system disturb any animals/creatures?
+
+Current evaluations:
+- The system stays afloat, and even when met with running water, will remain stable.
+- Weather conditions
+- - During partly cloudy weather, the system remains stable. We are able to get readings from the Bluetooth module and there are no disturbances in the water.
+- - This system cannot be used while snowing since the snow will fall on top of the system, which isn't fully waterproof
+- Waterproofness
+- - The Tupperware container is set on a piece of Styrofoam connected to the PVC structure, making it so water from the river won’t disturb the electronics. 
+- - The Tupperware container does include 2 small holes to run the pH sensor cable and the wiring from the solar panels, marking a vulnerability in the system in case it were to rain. 
+- - The solar panels are attached with zip ties, so in the event of rain or snow, some disturbances could occur to the wiring, including corrosion. 
