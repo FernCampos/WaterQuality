@@ -3,6 +3,7 @@ package com.droiduino.bluetoothconn;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -29,6 +30,8 @@ import java.util.UUID;
 import pl.pawelkleczkowski.customgauge.CustomGauge;
 
 import static android.content.ContentValues.TAG;
+
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
