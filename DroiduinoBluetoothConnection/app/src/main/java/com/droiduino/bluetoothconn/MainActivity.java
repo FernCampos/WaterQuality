@@ -3,6 +3,9 @@ package com.droiduino.bluetoothconn;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.bluetooth.BluetoothAdapter;
@@ -17,6 +20,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -32,6 +36,9 @@ import pl.pawelkleczkowski.customgauge.CustomGauge;
 import static android.content.ContentValues.TAG;
 
 import com.google.android.material.tabs.TabLayout;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,17 +54,65 @@ public class MainActivity extends AppCompatActivity {
     private final static int CONNECTING_STATUS = 1; // used in bluetooth handler to identify message status
     private final static int MESSAGE_READ = 2; // used in bluetooth handler to identify message update
 
+    FrameLayout simpleFrameLayout;
+    TabLayout tabLayout;
+    GraphView graph;
+    LineGraphSeries<DataPoint> lineGraphSeries;
+    int time = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*
+
+        simpleFrameLayout = (FrameLayout)findViewById(R.id.simpleFrameLayout);
+        tabLayout = (TabLayout)findViewById(R.id.TabBar);
+
+        TabLayout.Tab firstTab = tabLayout.newTab();
+        TabLayout.Tab secondTab = tabLayout.newTab();
+
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                Fragment fragment = null;
+                switch(tab.getPosition()){
+                    case 0:
+                        fragment = new FirstFragment();
+                        break;
+                    case 1:
+                        fragment = new SecondFragment();
+                        break;
+                }
+                FragmentManager fm = getSupportFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.simpleFrameLayout,fragment);
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                ft.commit();
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        */
         // UI Initialization
         final Button buttonConnect = findViewById(R.id.buttonConnect);
         final Toolbar toolbar = findViewById(R.id.toolbar);
         final ProgressBar progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.GONE);
         final TextView textViewInfo = findViewById(R.id.textViewInfo);
+        final TextView textViewHour = findViewById(R.id.textView2);
+        graph = (GraphView) findViewById(R.id.idGraphView);
+        lineGraphSeries = new LineGraphSeries<DataPoint>();
+        graph.addSeries(lineGraphSeries);
         //final Button buttonToggle = findViewById(R.id.buttonToggle);
         //buttonToggle.setEnabled(false);
         //final ImageView imageView = findViewById(R.id.imageView);
@@ -113,6 +168,10 @@ public class MainActivity extends AppCompatActivity {
                     case MESSAGE_READ:
                         String arduinoMsg = msg.obj.toString(); // Read message from Arduino
                         textViewInfo.setText(arduinoMsg + " pH");
+                        float arduinoVal = Float.parseFloat(arduinoMsg);
+                        // once we reach a certain number of data points, display series on graph
+                        lineGraphSeries.appendData(new DataPoint(time,arduinoVal),true,10);
+                        time += 10;
                         switch (arduinoMsg.toLowerCase()){
 
                             case "led is turned on":
