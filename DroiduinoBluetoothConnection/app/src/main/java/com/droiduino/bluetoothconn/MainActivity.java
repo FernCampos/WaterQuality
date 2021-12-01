@@ -171,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
                         float arduinoVal = Float.parseFloat(arduinoMsg);
                         // once we reach a certain number of data points, display series on graph
                         lineGraphSeries.appendData(new DataPoint(time,arduinoVal),true,10);
+                        graph.addSeries(lineGraphSeries);
                         time += 10;
                         switch (arduinoMsg.toLowerCase()){
 
