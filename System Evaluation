@@ -11,6 +11,14 @@ Things to evaluate the system on:
 - - Will any animals/creatures disturb the system?
 - - Does the system disturb any animals/creatures?
 - Potential overheating issues
+- Android versions and compatibility
+- Time complexity of sensing algorithm
+- Processing time
+- Dimensions of Buoy
+- Reliability of the physical floatation device
+- User acceptance
+-- Is the system too bulky?
+-- Can it be used in a variety of places?
 
 Current evaluations:
 - The system stays afloat, and even when met with running water, will remain stable.
@@ -21,3 +29,7 @@ Current evaluations:
 - - The Tupperware container is set on a piece of Styrofoam connected to the PVC structure, making it so water from the river won’t disturb the electronics. 
 - - The Tupperware container does include 2 small holes to run the pH sensor cable and the wiring from the solar panels, marking a vulnerability in the system in case it were to rain. 
 - - The solar panels are attached with zip ties, so in the event of rain or snow, some disturbances could occur to the wiring, including corrosion. 
+- Privacy
+- - The system can be tampered with, as there are no ways to "lock" the electronics from unwanted visitors including animals and people trying to disturb the system.
+- - No way to monitor if the system is being tampered with. 
+- - Bluetooth communication can be done with any android phone supporting bluetooth 4.0 and above. 
