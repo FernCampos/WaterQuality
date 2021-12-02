@@ -33,3 +33,12 @@ Current evaluations:
 - - The system can be tampered with, as there are no ways to "lock" the electronics from unwanted visitors including animals and people trying to disturb the system.
 - - No way to monitor if the system is being tampered with. 
 - - Bluetooth communication can be done with any android phone supporting bluetooth 4.0 and above. 
+- Arduino Storage and Complexity
+- - Arduino sends data every 10 seconds.
+- - Sensing algorithm is O(n^2). 
+- - 16070/32256 bytes are used in the program storage space. (49%)
+- - 1141/2048 bytes of dynamic memory are used. (55%)
+- Android Versions
+- - Phone must have Bluetooth 4.0 or above. 
+- - Minimum SDK of the app is 19.
+- - Target SDK of the app is 29. 
