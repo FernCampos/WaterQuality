@@ -25,6 +25,7 @@ Current evaluations:
 - Weather conditions
 - - During partly cloudy weather, the system remains stable. We are able to get readings from the Bluetooth module and there are no disturbances in the water.
 - - This system cannot be used while snowing since the snow will fall on top of the system, which isn't fully waterproof
+- - The same applies when it's raining, water will enter the system from the top
 - Waterproofness
 - - The Tupperware container is set on a piece of Styrofoam connected to the PVC structure, making it so water from the river won’t disturb the electronics. 
 - - The Tupperware container does include 2 small holes to run the pH sensor cable and the wiring from the solar panels, marking a vulnerability in the system in case it were to rain. 
