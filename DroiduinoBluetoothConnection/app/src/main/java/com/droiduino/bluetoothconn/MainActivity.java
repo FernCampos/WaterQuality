@@ -143,14 +143,16 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
                     // read a message from the arduino
                     case MESSAGE_READ:
                         String arduinoMsg = msg.obj.toString(); // Read message from Arduino
-                        textViewInfo.setText(arduinoMsg + " pH");
                         float pHf = Float.parseFloat(arduinoMsg);
-                        int pHi = (int)(pHf * 100);
-                        phBar.setProgress(pHi);
-                        phMessage.setText(evaluatePH(pHf));
-                        lineGraphSeries.appendData(new DataPoint(time,pHf),true,10);
-                        graph.addSeries(lineGraphSeries);
-                        time+=10;
+                        if(pHf <= 14.00) {
+                            textViewInfo.setText(arduinoMsg + " pH");
+                            int pHi = (int) (pHf * 100);
+                            phBar.setProgress(pHi);
+                            phMessage.setText(evaluatePH(pHf));
+                            lineGraphSeries.appendData(new DataPoint(time, pHf), true, 10);
+                            graph.addSeries(lineGraphSeries);
+                            time += 10;
+                        }
                         switch (arduinoMsg.toLowerCase()){
 
                             case "led is turned on":
