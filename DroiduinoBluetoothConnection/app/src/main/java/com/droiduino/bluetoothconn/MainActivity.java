@@ -36,6 +36,8 @@ import pl.pawelkleczkowski.customgauge.CustomGauge;
 import static android.content.ContentValues.TAG;
 
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GridLabelRenderer;
+import com.jjoe64.graphview.helper.StaticLabelsFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
@@ -56,6 +58,10 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     private Spinner spinner;
     private String bodyOfWater;
 
+    GraphView graph;
+    LineGraphSeries<DataPoint> lineGraphSeries;
+    int time = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +75,12 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         final TextView textViewInfo = findViewById(R.id.textViewInfo);
         final TextView phMessage = findViewById(R.id.phMessage);
         final ProgressBar phBar = findViewById(R.id.phBar);
+        graph = (GraphView)findViewById(R.id.idGraphView);
+        lineGraphSeries = new LineGraphSeries<DataPoint>();
+        graph.addSeries(lineGraphSeries);
+        GridLabelRenderer gridLabel = graph.getGridLabelRenderer();
+        gridLabel.setHorizontalAxisTitle("Time (s)");
+        gridLabel.setVerticalAxisTitle("pH");
         //final Button buttonToggle = findViewById(R.id.buttonToggle);
         //buttonToggle.setEnabled(false);
         //final ImageView imageView = findViewById(R.id.imageView);
@@ -136,6 +148,9 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
                         int pHi = (int)(pHf * 100);
                         phBar.setProgress(pHi);
                         phMessage.setText(evaluatePH(pHf));
+                        lineGraphSeries.appendData(new DataPoint(time,pHf),true,10);
+                        graph.addSeries(lineGraphSeries);
+                        time+=10;
                         switch (arduinoMsg.toLowerCase()){
 
                             case "led is turned on":

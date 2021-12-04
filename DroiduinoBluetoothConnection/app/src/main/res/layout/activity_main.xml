@@ -24,13 +24,14 @@
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/idGraphView"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_marginTop="240dp"
+        android:layout_width="372dp"
+        android:layout_height="201dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.234"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_bodies" />
+        app:layout_constraintTop_toTopOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.502" />
 
     <Button
         android:id="@+id/buttonConnect"
@@ -112,8 +113,8 @@
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="272dp"
         android:layout_height="36dp"
-        android:progress="0"
         android:max="1400"
+        android:progress="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
