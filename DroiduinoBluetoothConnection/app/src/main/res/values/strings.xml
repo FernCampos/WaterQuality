@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Droiduino Bluetooth Connection</string>
-
+    <string-array name="bodies">
+        <item>River</item>
+        <item>Lake</item>
+        <item>Ocean</item>
+    </string-array>
 </resources>
