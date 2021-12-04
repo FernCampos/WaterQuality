@@ -5,22 +5,18 @@ Things to evaluate the system on:
 - Amount of voltage going through the system from the battery
 - Maximum distance to communicate with Bluetooth module
 - Amount of time the system is on and working
-- - Will need to dedicate a day to testing
 - Environmental interactions
-- - Will any animals/creatures disturb the system?
-- - Does the system disturb any animals/creatures?
 - Potential overheating issues
 - Android versions and compatibility
 - Time complexity of sensing algorithm
 - Processing time
-- Dimensions of Buoy
 - Reliability of the physical floatation device
 - User acceptance
--- Is the system too bulky?
--- Can it be used in a variety of places?
 
 Current evaluations:
-- The system stays afloat, and even when met with running water, will remain stable.
+- Reliability of the physical floatation device
+- - The system stays afloat, and even when met with running water, will remain stable.
+- - Its floatation level seems the same before and after an hour of use
 - Weather conditions
 - - During partly cloudy weather, the system remains stable. We are able to get readings from the Bluetooth module and there are no disturbances in the water.
 - - This system cannot be used while snowing since the snow will fall on top of the system, which isn't fully waterproof
@@ -66,3 +62,9 @@ Current evaluations:
 - - The voltage readings on the battery indicate that the solar cells are able to keep the battery charged at a consistent level
 - - However, the hosting phone lost 15% power in the span of an hour while using the app.
 - - This reinforces the idea that users are ideally supposed to check in on the system every so often, not constantly monitor it
+- Amount of time the system is on and working
+- - Under sunny conditions, the battery will be nearly fully charged
+- - During night, the system can run for about 11 hours. The battery has a capacity of 2200mAH, and the arduino has a
+- - maximum current draw of 200mA. So when there is no sunlight being directed on the solar cells, the battery
+- - can stay on for at most 11 hours if there is no sunlight. You calculate this by dividing the battery capacity
+- - by the current draw. So 2200mAH/200mA is 11 hours. 
