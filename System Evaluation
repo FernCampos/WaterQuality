@@ -4,7 +4,6 @@ Things to evaluate the system on:
 - Data storage on the Arduino
 - Amount of voltage going through the system from the battery
 - Maximum distance to communicate with Bluetooth module
-- Illuminance values 
 - Amount of time the system is on and working
 - - Will need to dedicate a day to testing
 - Environmental interactions
@@ -25,6 +24,11 @@ Current evaluations:
 - Weather conditions
 - - During partly cloudy weather, the system remains stable. We are able to get readings from the Bluetooth module and there are no disturbances in the water.
 - - This system cannot be used while snowing since the snow will fall on top of the system, which isn't fully waterproof
+- - The same applies when it's raining, water will enter the system from the top
+- pH sensor accuracy
+- - +- 0.1
+- Maximum distance to communicate with Bluetooth module
+- - About 102 feet
 - Waterproofness
 - - The Tupperware container is set on a piece of Styrofoam connected to the PVC structure, making it so water from the river won’t disturb the electronics. 
 - - The Tupperware container does include 2 small holes to run the pH sensor cable and the wiring from the solar panels, marking a vulnerability in the system in case it were to rain. 
@@ -45,5 +49,20 @@ Current evaluations:
 - User Acceptance
 - - System must be disassembled when transporting.
 - - Lightweight but awkward to carry.
+- - The system is smaller than most backpacks
+- - L x W x H, 14" x 13" x 8"
 - - With its dimensions, it can be used in different bodies of water, such as rivers,
 - - lakes, streams, and runoffs due to its compact square size. 
+- Environmental interactions
+- - Many ducks passed by and deliberately avoided the buoy
+- - The buoy got stuck at the river bank
+- Potential overheating issues
+- - The battery was barely warm after an hour of activity
+- Processing time
+- - Takes 2-3 seconds to connect to the bluetooth module
+- - The reading updates every 10 seconds as we set the arduino to get a value every 10 seconds. 
+- - This is because the amount of unnatural spikes in pH occurs more often the more frequent the pH sensor is read
+- Amount of voltage going through the system from the battery
+- - The voltage readings on the battery indicate that the solar cells are able to keep the battery charged at a consistent level
+- - However, the hosting phone lost 15% power in the span of an hour while using the app.
+- - This reinforces the idea that users are ideally supposed to check in on the system every so often, not constantly monitor it
