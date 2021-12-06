@@ -1,10 +1,12 @@
-package com.droiduino.bluetoothconn;
+package phbuoywowawesome.droiduino.phbuoy;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import phbuoywowawesome.R;
 
 public class SecondFragment extends androidx.fragment.app.Fragment {
     public SecondFragment(){}

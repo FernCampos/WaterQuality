@@ -1,4 +1,4 @@
-package com.droiduino.bluetoothconn;
+package phbuoywowawesome.droiduino.phbuoy;
 
 import android.content.Intent;
 import android.content.Context;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import phbuoywowawesome.R;
 
 public class DeviceListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 

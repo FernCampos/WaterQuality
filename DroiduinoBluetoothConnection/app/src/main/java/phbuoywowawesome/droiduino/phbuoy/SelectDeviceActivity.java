@@ -1,4 +1,4 @@
-package com.droiduino.bluetoothconn;
+package phbuoywowawesome.droiduino.phbuoy;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -15,6 +15,8 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+
+import phbuoywowawesome.R;
 
 public class SelectDeviceActivity extends AppCompatActivity {
 

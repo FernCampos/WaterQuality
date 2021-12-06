@@ -1,4 +1,4 @@
-package com.droiduino.bluetoothconn;
+package phbuoywowawesome.droiduino.phbuoy;
 
 import android.content.Context;
 

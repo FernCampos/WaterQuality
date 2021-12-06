@@ -1,4 +1,4 @@
-package com.droiduino.bluetoothconn;
+package phbuoywowawesome.droiduino.phbuoy;
 
 public class DeviceInfoModel {
 
